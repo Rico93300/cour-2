@@ -1,0 +1,4 @@
+dans Action on indique le nom du fichier vers lequel le formulaire va etre envoyer.
+
+
+une "superglobal" es une  variable disponible de partout qui contient des informations sur le serveur, sur le site. 
