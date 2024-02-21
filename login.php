@@ -19,44 +19,17 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
                 // j'arrete le code si on a trouver l'utilisateur car ca sert a rien de continuer la boucle
                 // return;
                 $_SESSION['user']= $user['email'];
-                header('location: index.php');
+                header('location: /');
             }
         }
         // si aucun utilisateur n'est trouver alors on met un utre message dans l'erreur
         $errorMessage = "email ou mot de passe incorrect";
     }
 }
-
-?>
-
+require_once(__DIR__ . "/views/login.view.php") ?>
 
 
 
 
 
-<?php 
-$title="login";
-require_once(__DIR__ . "/head.php") ?>
 
-<form action="" method="POST">
-
-    <label for="email">email :</label>
-    <input type="email" name="email" />
-
-
-    <label for="password">Mot de Passe :</label>
-    <input type="password" name="password" />
-
-
-
-    <button type="submit" class='btn btn-primary '>Envoyer</button>
-</form>
-
-
-
-<?php if (isset($errorMessage)) {
-    echo "<p class='text-danger'>" . $errorMessage . "</p>";
-}
-
-
-require_once(__DIR__ . "/footer.php") ?>
